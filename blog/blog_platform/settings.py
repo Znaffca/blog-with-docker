@@ -35,8 +35,12 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.getenv("DEBUG", default=1))
 
+# django allowed hosts
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS").split("_")
 
+# added site_id because the the sitemap view throws an DoesNotExistsError withou this param
+
+SITE_ID = 1
 
 # Application definition
 
@@ -47,6 +51,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
+    "django.contrib.sitemaps",
     "blog_app.apps.BlogAppConfig",
     "taggit",
 ]
