@@ -28,7 +28,11 @@
                     <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                 </li>
                 {% endfor %}
-            </ul>   
+            </ul> 
+            <h3>Search for posts</h3>
+            <ul>
+                <li>Click<a href="{% url 'blog_app:post_search' %}" style="font-weight:bold;"> HERE</a> for post search</li>
+            </ul>
         </div>
     </body>
 </html>
